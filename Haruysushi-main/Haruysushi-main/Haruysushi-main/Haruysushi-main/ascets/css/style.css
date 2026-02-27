@@ -1,138 +1,162 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;500;700;900&display=swap');
+
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
-    color: #222222;
-    margin: 0;
-    font-family: "Barlow";
-    width: 100%;
+    color:#222;
+    font-family:"Barlow", sans-serif;
 }
 
+/* ===== LINKS ===== */
 a{
-    text-decoration: none;
-    color: #222222;
+    text-decoration:none;
+    color:#222;
 }
-
 a:hover{
-    color: #ca3c3f;
+    color:#ca3c3f;
 }
 
+/* ===== HEADER ===== */
 .header{
-    width: auto;
-    text-align: center;
-    padding: 0;
-    margin-top: 80px;
-}
-
-.menu{
-    width: auto;
-    text-align: center;
-    font-weight: bold;
+    text-align:center;
+    padding:10px;
 }
 
 .menu-links{
-    list-style: none;
-    padding: 0;
+    list-style:none;
+    font-weight:bold;
 }
 
+/* ===== BANNER (IPHONE FIRST 📱) ===== */
 .banner{
-    width: 100%;
-    text-align: center;
+    display:flex;
+    flex-direction:column; /* empilha */
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 20px;
 }
 
 .coluna{
-    width: 45%;
-    display: inline-block;
-    vertical-align: middle;
+    width:100%;
 }
 
 .banner p{
-    font-size: 40px;
-    text-align: left;
-    padding-left: 100px;
-    padding-right: 100px;
+    font-size:2rem;
+    padding:0 20px;
 }
 
+/* BOTÃO TOUCH FRIENDLY */
 .botao{
-    border: 1px solid #333333;
-    border-radius: 14px;
-    padding: 20px;
-    padding-right: 20px;
-    font-size: 20px;
+    border:1px solid #333;
+    border-radius:5px;
+    padding:14px 28px;
+    font-size:1.2rem;
+    display:inline-block;
+    margin-top:20px;
 }
 
+/* IMAGEM CENTRALIZADA */
 .banner img{
-    width: 90%;
-    
+    width:85%;
+    max-width:320px;
+    margin-top:25px;
 }
 
-
-
+/* ===== CARDÁPIO ===== */
 .cardapio{
-    box-sizing: border-box;
-    border-top: 1px dashed #999999;
-    width: 100%;
-    margin: auto;
-    max-width: 700px;
-    text-align: center;
-    margin-top: 100px;
-    padding: 50px 15px 10px 15px;
+    border-top:1px dashed #999;
+    max-width:500px;
+    margin:60px auto;
+    padding:30px 15px;
+    text-align:center;
 }
 
 .cardapio-categoria{
-    text-align: left;
-    color: #ca3c3f;
-    font-size: 22px;
-    margin-top: 50px;
+    text-align:left;
+    color:#ca3c3f;
+    font-size:1.6rem;
+    margin-top:40px;
 }
 
 .cardapio-item{
-    padding-top: 20px;
-    text-align: left;
-    width: 100%;
+    text-align:left;
+    padding:18px 0;
 }
 
 .cardapio-nome{
-    display: inline-block;
-    font-size: 18px;
-    font-weight: bold;
+    font-weight:bold;
 }
 
 .cardapio-preco{
-    font-size: 12px;
-    color: #ca3c3f;
+    color:#ca3c3f;
+    font-weight:bold;
 }
 
-.cardapio-descrcao{
-    font-size: 12px;
-    color: #999999;
+.cardapio-descricao{
+    font-size:14px;
+    color:#999;
 }
 
+/* ===== FOOTER ===== */
 footer{
-    margin-top: 100px;
-    text-align: center;
-    padding: 50px;
-    font-size: 14px;
-    color: #fff;
-    background-color: #333333;
+    margin-top:60px;
+    text-align:center;
+    padding:20px;
+    font-size:14px;
+    color:#fff;
+    background:#333;
 }
 
+/* ===== WHATSAPP (Thumb Zone 👍) ===== */
 .link-whatsapp img{
-    height: 60px;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
+    height:60px;
+    position:fixed;
+    right:20px;
+    bottom:20px;
 }
 
-@media (max-width: 900px){
-    .coluna{
-    width: 100%;
-    vertical-align: middle;
-    margin-bottom: 30px;
-    }
-    .banner p{
-    font-size: 26px;
-    text-align: center;
-    padding-left: 50px;
-    padding-right: 50px;
-    }
+/* ===== TABLET 💻 ===== */
+@media (min-width:768px){
+
+.banner{
+    flex-direction:column;
+}
+
+.banner img{
+    max-width:380px;
+}
+}
+
+/* ===== DESKTOP 🖥️ ===== */
+@media (min-width:900px){
+
+.header{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.banner{
+    flex-direction:row; /* lado a lado só no desktop */
+    text-align:left;
+}
+
+.coluna{
+    width:50%;
+}
+
+.banner p{
+    font-size:2.5rem;
+    padding:0 80px;
+}
+
+.banner img{
+    max-width:500px;
+}
 }
